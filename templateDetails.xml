@@ -49,14 +49,14 @@
                 <field name="list_display_view" type="list" default="list" label="TPL_SEB_LIST_UIKIT_DISPLAY_VIEW" description="TPL_SEB_LIST_UIKIT_DISPLAY_VIEW_DESC" class="inputbox">
                     <option value="grid">UIKit Grid</option>
                     <option value="table">UIKit Table</option>
-                    <option value="switcher">UIKit Switcher</option>
-                    <option value="slideshow">UIKit Slideshow</option>
-                    <option value="season_switcher">UIKit Season Switcher</option>
-                    <option value="diam_switcher">UIKit Diameter Switcher</option>
-                    <option value="grid_module">UIKit Grid Module</option>
-                    <option value="comment">UIKit Comment</option>
-                    <option value="grid_filter">UIKit Grid Filter</option>
-                    <option value="nested_list">UIKit List Nested</option>
+                    <!--option value="switcher">UIKit Switcher</option-->
+                    <!--option value="slideshow">UIKit Slideshow</option-->
+                    <!--option value="season_switcher">UIKit Season Switcher</option-->
+                    <!--option value="diam_switcher">UIKit Diameter Switcher</option-->
+                    <!--option value="grid_module">UIKit Grid Module</option-->
+                    <!--option value="comment">UIKit Comment</option-->
+                    <!--option value="grid_filter">UIKit Grid Filter</option-->
+                    <!--option value="nested_list">UIKit List Nested</option-->
                 </field>
             </fieldset>
 
