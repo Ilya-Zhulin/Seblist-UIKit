@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" version="2.5" method="upgrade">
+    <name>seb_list_uikit</name>
+    <author>Russian Sebloders</author>
+    <authorEmail>info@sebloders.ru</authorEmail>
+    <authorUrl>http://www.sebloders.ru</authorUrl>
+    <copyright>Copyright (C) 2015 Russian Sebloders. All Rights Reserved.</copyright>
+    <license>GNU General Public License version 2 or later.</license>
+    <creationDate>Jan 2015</creationDate>
+    <description>UIKit List Template for SEBLOD 3.x</description>
+    <version>3.1.0</version>
+
+    <files>
+        <folder>css</folder>
+        <folder>fields</folder>
+        <folder>images</folder>
+        <folder>includes</folder>
+        <folder>js</folder>
+        <folder>languages</folder>
+        <folder>positions</folder>
+        <folder>variations</folder>
+
+        <filename>config.php</filename>
+        <filename>index.php</filename>
+        <filename>template_preview.png</filename>
+        <filename>template_thumbnail.png</filename>
+        <filename>templateDetails.xml</filename>
+        <filename>index.html</filename>
+    </files>
+
+    <languages folder="languages">
+        <language tag="en-GB">en-GB/en-GB.tpl_seb_list_uikit.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.tpl_seb_list_uikit.ini</language>
+    </languages>
+
+    <positions>
+        <position>uk-grid</position>				<!-- UIKit Grid -->
+        <position>uk-switcher-toggle</position>		<!-- UIKit Switcher -->
+        <position>uk-switcher-container</position>	<!-- UIKit Switcher -->
+        <position>uk-slideshow</position>			<!-- UIKit Slideshow -->
+    </positions>
+
+    <config addfieldpath="/libraries/cck/construction/field">
+        <fields name="params">
+
+            <fieldset name="style" label="TPL_SEB_LIST_UIKIT_LEGEND_STYLE">
+                <field name="cck_client_item" type="hidden" default="0" />
+                <field name="list_display" type="cck" construction="core_list_display" default="0" label="TPL_SEB_LIST_UIKIT_DISPLAY" description="" class="inputbox" cck_attributes="data-cck_client_item='0=0,1=1,2=0'" />
+                <field name="list_display_view" type="list" default="list" label="TPL_SEB_LIST_UIKIT_DISPLAY_VIEW" description="TPL_SEB_LIST_UIKIT_DISPLAY_VIEW_DESC" class="inputbox">
+                    <option value="grid">UIKit Grid</option>
+                    <option value="table">UIKit Table</option>
+                    <option value="switcher">UIKit Switcher</option>
+                    <option value="slideshow">UIKit Slideshow</option>
+                    <option value="season_switcher">UIKit Season Switcher</option>
+                    <option value="diam_switcher">UIKit Diameter Switcher</option>
+                    <option value="grid_module">UIKit Grid Module</option>
+                    <option value="comment">UIKit Comment</option>
+                    <option value="grid_filter">UIKit Grid Filter</option>
+                    <option value="nested_list">UIKit List Nested</option>
+                </field>
+            </fieldset>
+
+            <!-- UIKit Grid -->
+            <fieldset name="uk_grid_style" label="TPL_SEB_LIST_UIKIT_GRID_LEGEND_STYLE">
+                <field name="uk_grid_ul_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_GRID_UL_CLASS" description="TPL_SEB_LIST_UIKIT_GRID_UL_CLASS_DESC" class="inputbox" />
+                <field name="uk_grid_ul_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_GRID_UL_ATTRIBUTE" description="TPL_SEB_LIST_UIKIT_GRID_UL_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_grid_li_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_GRID_LI_CLASS" description="TPL_SEB_LIST_UIKIT_GRID_LI_CLASS_DESC" class="inputbox" />
+                <field name="uk_grid_li_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_GRID_LI_ATTRIBUTE" description="TPL_SEB_LIST_UIKIT_GRID_LI_ATTRIBUTE_DESC" class="inputbox" />
+            </fieldset>
+            <!-- UIKit List Nested -->
+            <fieldset name="uk_list_nested_style" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_LEGEND_STYLE">
+                <field name="uk_list_nested_parent_field_name" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_PARENT_FIELD_NAME_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_PARENT_FIELD_DESC" class="inputbox" />
+                <field name="uk_list_nested_spacer" type="spacer" construction="core_dev_text" default="" label="" description="" class="inputbox" required="yes" />
+                <field name="uk_list_nested_ul_first_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_FIRST_CLASS_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_FIRST_CLASS_DESC" class="inputbox" />
+                <field name="uk_list_nested_ul_first_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_FIRST_ATTRIBUTE_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_FIRST_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_list_nested_li_first_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_FIRST_CLASS_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_FIRST_CLASS_DESC" class="inputbox" />
+                <field name="uk_list_nested_li_first_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_FIRST_ATTRIBUTE_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_FIRST_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_list_nested_ul_second_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_SECOND_CLASS_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_SECOND_CLASS_DESC" class="inputbox" />
+                <field name="uk_list_nested_ul_second_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_SECOND_ATTRIBUTE_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_SECOND_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_list_nested_li_second_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_SECOND_CLASS_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_SECOND_CLASS_DESC" class="inputbox" />
+                <field name="uk_list_nested_li_second_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_SECOND_ATTRIBUTE_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_SECOND_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_list_nested_ul_third_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_THIRD_CLASS_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_THIRD_CLASS_DESC" class="inputbox" />
+                <field name="uk_list_nested_ul_third_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_THIRD_ATTRIBUTE_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_UL_THIRD_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_list_nested_li_third_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_THIRD_CLASS_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_THIRD_CLASS_DESC" class="inputbox" />
+                <field name="uk_list_nested_li_third_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_THIRD_ATTRIBUTE_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_LI_THIRD_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_list_nested_common_list_merge" type="list" default="0" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_COMMON_LIST_MERGE_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_COMMON_LIST_MERGE_DESC" class="inputbox">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="uk_list_nested_add_wrapper" type="list" default="0" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_ADD_WRAPPER_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_ADD_WRAPPER_DESC" class="inputbox">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="uk_list_nested_wrapper_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_WRAPPER_CLASS_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_WRAPPER_CLASS_DESC" class="inputbox" />
+                <field name="uk_list_nested_wrapper_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_LIST_NESTED_WRAPPER_ATTRIBUTE_LABEL" description="TPL_SEB_LIST_UIKIT_LIST_NESTED_WRAPPER_ATTRIBUTE_DESC" class="inputbox" />
+            </fieldset>
+            <!-- UIKit Table -->
+            <fieldset name="uk_table_style" label="TPL_SEB_LIST_UIKIT_TABLE_LEGEND_STYLE">
+                <field name="uk_table_table_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_TABLE_TABLE_CLASS" description="TPL_SEB_LIST_UIKIT_TABLE_TABLE_CLASS_DESC" class="inputbox" />
+                <field name="uk_table_table_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_TABLE_TABLE_ATTRIBUTE" description="TPL_SEB_LIST_UIKIT_TABLE_TABLE_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_table_tr_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_TABLE_TR_CLASS" description="TPL_SEB_LIST_UIKIT_TABLE_TR_CLASS_DESC" class="inputbox" />
+                <field name="uk_table_tr_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_TABLE_TR_ATTRIBUTE" description="TPL_SEB_LIST_UIKIT_TABLE_TR_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_table_th" type="list" default="0" label="TPL_SEB_LIST_UIKIT_TABLE_TH" description="TPL_SEB_LIST_UIKIT_TABLE_TH" class="inputbox">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="uk_table_responsive_table" type="list" default="0" label="TPL_SEB_LIST_UIKIT_TABLE_RESPONSIVE_TABLE" description="TPL_SEB_LIST_UIKIT_TABLE_RESPONSIVE_TABLE" class="inputbox">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+
+            <!-- UIKit Switcher -->
+            <fieldset name="uk_switcher_style" label="TPL_SEB_LIST_UIKIT_SWITCHER_LEGEND_STYLE">
+
+            </fieldset>
+
+            <!-- UIKit Slideshow -->
+            <fieldset name="uk_slideshow_style" label="TPL_SEB_LIST_UIKIT_SLIDESHOW_LEGEND_STYLE">
+                <field name="uk_slideshow_ul_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_SLIDESHOW_UL_CLASS" description="TPL_SEB_LIST_UIKIT_SLIDESHOW_UL_CLASS_DESC" class="inputbox" />
+                <field name="uk_slideshow_ul_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_SLIDESHOW_UL_ATTRIBUTE" description="TPL_SEB_LIST_UIKIT_SLIDESHOW_UL_ATTRIBUTE_DESC" class="inputbox" />
+                <field name="uk_slideshow_li_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_SLIDESHOW_LI_CLASS" description="TPL_SEB_LIST_UIKIT_SLIDESHOW_LI_CLASS_DESC" class="inputbox" />
+                <field name="uk_slideshow_li_attribute" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_SLIDESHOW_LI_ATTRIBUTE" description="TPL_SEB_LIST_UIKIT_SLIDESHOW_LI_ATTRIBUTE_DESC" class="inputbox" />
+
+                <field name="uk_slidenav_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_SLIDENAV_CLASS" description="TPL_SEB_LIST_UIKIT_SLIDENAV_CLASS_DESC" class="inputbox" />
+                <field name="uk_slidenav_attribute" type="cck" construction="core_dev_text" default="data-uk-slideshow" label="TPL_SEB_LIST_UIKIT_SLIDENAV_ATTRIBUTE" description="TPL_SEB_LIST_UIKIT_SLIDENAV_ATTRIBUTE_DESC" class="inputbox" />
+
+                <field name="uk_slidenav" type="list" default="0" label="TPL_SEB_LIST_UIKIT_SLIDENAV" description="TPL_SEB_LIST_UIKIT_SLIDENAV_DESC" class="inputbox">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="" type="spacer" label="" />
+                <field name="uk_slidenav_previous_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_SLIDENAV_PREVIOUS_CLASS" description="TPL_SEB_LIST_UIKIT_SLIDENAV_PREVIOUS_CLASS_DESC" class="inputbox" />
+                <field name="uk_slidenav_next_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_SLIDENAV_NEXT_CLASS" description="TPL_SEB_LIST_UIKIT_SLIDENAV_NEXT_CLASS_DESC" class="inputbox" />
+
+                <field name="uk_dotnav" type="list" default="0" label="TPL_SEB_LIST_UIKIT_DOTNAV" description="TPL_SEB_LIST_UIKIT_DOTNAV_DESC" class="inputbox">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="" type="spacer" label="" />
+                <field name="uk_dotnav_ul_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_DOTNAV_UL_CLASS" description="TPL_SEB_LIST_UIKIT_DOTNAV_UL_CLASS_DESC" class="inputbox" />
+                <field name="uk_dotnav_li_class" type="cck" construction="core_dev_text" default="" label="TPL_SEB_LIST_UIKIT_DOTNAV_LI_CLASS" description="TPL_SEB_LIST_UIKIT_DOTNAV_LI_CLASS_DESC" class="inputbox" />
+            </fieldset>
+
+            <!-- CSS Custom Code -->
+            <fieldset name="css_assets" label="TPL_SEB_LIST_UIKIT_LEGEND_CSS_ASSETS">
+                <field name="css_include" type="list" construction="core_dev_text" default="0" label="TPL_SEB_LIST_CSS_INCLUDE" description="TPL_SEB_LIST_CSS_INCLUDE_DESC" class="inputbox">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="" type="spacer" label="" />
+                <field name="css_scripts" type="textarea" default="" cols="50" rows="10" label="TPL_SEB_LIST_UIKIT_CSS_SCRIPTS" description="TPL_SEB_LIST_UIKIT_CSS_SCRIPTS_DESC" class="inputbox" />
+                <field name="css_code" type="textarea" default="" cols="50" rows="10" label="TPL_SEB_LIST_UIKIT_CSS_CODE" description="TPL_SEB_LIST_UIKIT_CSS_CODE_DESC" class="inputbox" />
+                <field name="bottom_cckjs0" type="cckjs" label="" description="" js_isvisiblewhen="#params_css_scripts='params_css_include','1',false" js_format="raw" hidden="true" />
+                <field name="bottom_cckjs1" type="cckjs" label="" description="" js_isvisiblewhen="#params_css_scripts-lbl='params_css_include','1',false" js_format="raw" hidden="true" />
+                <field name="bottom_cckjs2" type="cckjs" label="" description="" js_isvisiblewhen="#params_css_code='params_css_include','1',false" js_format="raw" hidden="true" />
+                <field name="bottom_cckjs3" type="cckjs" label="" description="" js_isvisiblewhen="#params_css_code-lbl='params_css_include','1',false" js_format="raw" hidden="true" />
+            </fieldset>
+
+            <!-- JS Custom Code -->
+            <fieldset name="js_assets" label="TPL_SEB_LIST_UIKIT_LEGEND_JS_ASSETS">
+                <field name="js_include" type="list" construction="core_dev_text" default="0" label="TPL_SEB_LIST_JS_INCLUDE" description="TPL_SEB_LIST_JS_INCLUDE_DESC" class="inputbox">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="" type="spacer" label="" />
+                <field name="js_scripts" type="textarea" default="" cols="50" rows="10" label="TPL_SEB_LIST_UIKIT_JS_SCRIPTS" description="TPL_SEB_LIST_UIKIT_JS_SCRIPTS_DESC" class="inputbox" />
+                <field name="js_code" type="textarea" default="" cols="50" rows="10" label="TPL_SEB_LIST_UIKIT_JS_CODE" description="TPL_SEB_LIST_UIKIT_JS_CODE_DESC" class="inputbox" />
+                <field name="bottom_cckjs0" type="cckjs" label="" description="" js_isvisiblewhen="#params_js_scripts='params_js_include','1',false" js_format="raw" hidden="true" />
+                <field name="bottom_cckjs1" type="cckjs" label="" description="" js_isvisiblewhen="#params_js_scripts-lbl='params_js_include','1',false" js_format="raw" hidden="true" />
+                <field name="bottom_cckjs2" type="cckjs" label="" description="" js_isvisiblewhen="#params_js_code='params_js_include','1',false" js_format="raw" hidden="true" />
+                <field name="bottom_cckjs3" type="cckjs" label="" description="" js_isvisiblewhen="#params_js_code-lbl='params_js_include','1',false" js_format="raw" hidden="true" />
+            </fieldset>
+
+        </fields>
+    </config>
+
+    <updateservers>
+        <!-- <server type="extension" priority="1" name="List Template Updates">http://update.seblod.com/seb_list.xml</server> -->
+    </updateservers>
+</extension>
